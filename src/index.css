@@ -18,3 +18,9 @@ body {
   max-width: 1012px !important;
   margin: auto;
 }
+
+@media (min-width: 768px) {
+  .info {
+    order: 3 !important;
+  }
+}
