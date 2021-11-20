@@ -1,5 +1,6 @@
 import React from "react";
 import Repositories from "./repositories/Repositories";
+import Footer from "./footer/Footer";
 
 const Trending: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const Trending: React.FC = () => {
       <main className="py-10 px-4 border-navCol border-t">
         <Repositories />
       </main>
+      <Footer />
     </div>
   );
 };
