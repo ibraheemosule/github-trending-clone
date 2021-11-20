@@ -8,7 +8,7 @@ import heart from "../../assets/img/heart.svg";
 
 const Repositories: React.FC = () => {
   return (
-    <section className="border border-t-0 border-solid border-borderCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none">
+    <section className="card border border-t-0 border-solid border-borderCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none">
       <div className="flex w-full justify-between my-2">
         <div className="flex">
           <span>1. </span>

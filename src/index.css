@@ -12,6 +12,7 @@
 
 body {
   background: #22272d;
+  margin: auto;
 }
 
 .container {
@@ -23,4 +24,8 @@ body {
   .info {
     order: 3 !important;
   }
+}
+
+.card:last-child {
+  border-radius: 0 0 0.375rem 0.375rem;
 }

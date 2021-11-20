@@ -39,7 +39,10 @@ const Repositories: React.FC = () => {
           </p>
         </div>
       </section>
-
+      <DevCard />
+      <DevCard />
+      <DevCard />
+      <DevCard />
       <DevCard />
     </article>
   );
