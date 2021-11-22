@@ -2,8 +2,9 @@ import React from "react";
 import arrowDown from "../../assets/img/caret-down-outline.svg";
 import DevCard from "./DevCard";
 import { Link } from "react-router-dom";
+import developers from "../../github-data/popularDevs";
 
-const Repositories: React.FC = () => {
+const Developers: React.FC = () => {
   return (
     <article className="container">
       <section className="border border-solid border-borderCol xs:bg-navCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none md:flex justify-between">
@@ -40,13 +41,11 @@ const Repositories: React.FC = () => {
           </p>
         </div>
       </section>
-      <DevCard />
-      <DevCard />
-      <DevCard />
-      <DevCard />
-      <DevCard />
+      {developers.map(dev => (
+        <DevCard key={dev.rank} dev={dev} />
+      ))}
     </article>
   );
 };
 
-export default Repositories;
+export default Developers;

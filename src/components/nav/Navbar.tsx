@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="p-0 m-0 text-pry w-100">
       <div className="text-pryCol w-100 xs:bg-navCol">
-        <div className="lg:px-8 mb-2 px-4 py-4 mx-auto max-w-screen-2xl justify-between items-center flex flex-wrap md:flex-nowrap text-sm font-bold">
+        <div className="lg:px-8 mb-2 px-4 py-2 mx-auto max-w-screen-2xl justify-between items-center flex flex-wrap md:flex-nowrap text-sm font-bold">
           <img
             onClick={showMenu}
             className="w-6 h-6 md:hidden hover:text-pryCol cursor-pointer"
@@ -97,14 +97,19 @@ const Navbar: React.FC = () => {
               </a>
             </li>
           </ul>
-          <div className="md:ml-auto md:w-4 inline-block text-right">
+          <div className="md:hidden inline-block text-right">
             <img
               className="w-4 h-4 md:ml-auto md:-mr-4 md1:-mr-6 md2:-mr-8 lg:-mr-12 xl:-mr-20 2xl:-mr-24 inline-block hover:text-pryCol cursor-pointer"
               src={notificationIcon}
               alt="menu icon"
             />
           </div>
-          <div className="hidden w-8 md:inline md:ml-auto 1xl:mr-4 2xl:mr-8">
+          <div className="hidden w-16 md:inline md:ml-auto 1xl:mr-4 2xl:mr-8">
+            <img
+              className="w-4 h-4 md:ml-auto mr-4 inline-block hover:text-pryCol cursor-pointer"
+              src={notificationIcon}
+              alt="menu icon"
+            />
             <img
               className="w-3 h-3 inline  hover:text-pryCol cursor-pointer"
               src={plusIcon}
@@ -131,29 +136,29 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      <ul className="container text-sm pb-0 flex flex-wrap lg:flex-nowrap justify-between items-center text-pryCol">
-        <div className="flex justify-center lg:justify-items-start w-full lg:w-auto flex-wrap">
-          <li className="md:mx-4 mx-1 lg:ml-0 w-full md:w-auto text-center mb-2 md:mb-0">
+      <ul className="container text-sm pb-0 md:px-4 xl:px-0 flex flex-wrap md:flex-nowrap justify-between items-stretch text-pryCol">
+        <div className="flex justify-center md:justify-start lg:justify-items-start w-full md:w-auto flex-wrap md:flex-nowrap">
+          <li className="md:mx-4 md1:mx-5 md:ml-0 md1:ml-0 mx-1 mt-2 w-full md:w-auto text-center mb-2 md:mb-0 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol ">
             {" "}
             <a href="#">Explore</a>
           </li>
-          <li className="md:mx-6 mx-2 lg:ml-0 pb-2">
+          <li className="md:mx-2 md1:mx-3 mx-2 mt-2 lg:ml-0 pb-2 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol">
             <a href="#">Topics</a>
           </li>
-          <li className="md:mx-2 mx-1  lg:ml-0 pb-2">
+          <li className="md:mx-2 md1:mx-3 mx-1 mt-2 lg:ml-0 pb-2 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol">
             <a href="#">Trending</a>
           </li>
-          <li className="md:mx-6 mx-2  lg:ml-0 pb-2">
+          <li className="md:mx-4 md1:mx-3 mx-2 mt-2  lg:ml-0 pb-2 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol">
             <a href="#">Collections</a>
           </li>
-          <li className="md:mx-6 mx-2 lg:ml-0 pb-2">
+          <li className="md:mx-4 md1:mx-3 mx-2 mt-2 lg:ml-0 pb-2 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol">
             <a href="#">Events</a>
           </li>
-          <li className="md:mx-6 mx-2 lg:ml-0 lg:mr-0 pb-2">
+          <li className="md:mx-4 md1:mx-3 mt-2 mx-2 h-100 block lg:ml-0 cursor-pointer lg:mr-0 pb-2 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol">
             <a href="#">GitHub Sponsors</a>
           </li>
         </div>
-        <button className="capitalize hidden md:inline py-2 px-3 mb-2 hover:bg-titleCol border border-solid rounded-md border-borderCol bg-navCol hover:text-titleCol">
+        <button className="capitalize hidden  md:inline py-2 px-3 mb-2 hover:bg-borderCol hover:border-titleCol border border-solid rounded-md border-borderCol bg-navCol hover:text-titleCol">
           get email updates
         </button>
       </ul>

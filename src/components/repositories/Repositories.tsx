@@ -2,8 +2,10 @@ import React from "react";
 import arrowDown from "../../assets/img/caret-down-outline.svg";
 import RepoCard from "./RepoCard";
 import { Link } from "react-router-dom";
+import repositories from "../../github-data/popularRepo";
 
 const Repositories: React.FC = () => {
+  console.log(repositories);
   return (
     <article className="container">
       <section className="border border-solid border-borderCol xs:bg-navCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none md:flex justify-between">
@@ -52,7 +54,9 @@ const Repositories: React.FC = () => {
         </div>
       </section>
 
-      <RepoCard />
+      {repositories.map(repo => (
+        <RepoCard key={repo.rank} repo={repo} />
+      ))}
     </article>
   );
 };

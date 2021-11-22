@@ -2,6 +2,7 @@ import React from "react";
 import Repositories from "./repositories/Repositories";
 import Footer from "./footer/Footer";
 import Developers from "./developers/Developers";
+import Error404 from "./Error404/Error404";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -20,6 +21,7 @@ const Trending: React.FC = () => {
           <Route path="/" element={<Repositories />} />
           <Route path="/repositories" element={<Repositories />} />
           <Route path="/developers" element={<Developers />} />
+          <Route path="/*" element={<Error404 />} />
         </Routes>
       </main>
       <Footer />

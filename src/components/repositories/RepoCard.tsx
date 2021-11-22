@@ -1,41 +1,58 @@
-import React from "react";
-import repo from "../../assets/img/repo.svg";
+import React, { MouseEvent } from "react";
+import repoIcon from "../../assets/img/repo.svg";
 import star from "../../assets/img/star.svg";
 import fork from "../../assets/img/fork.svg";
-import image from "../../assets/img/image.jpeg";
+import { IProps } from "../../ts-types/types";
 
-const Repositories: React.FC = () => {
+const Repositories: React.FC<IProps> = ({ repo }) => {
+  const {
+    username,
+    repositoryName,
+    description,
+    language,
+    totalStars,
+    forks,
+    starsSince,
+    builtBy,
+    languageColor,
+    url,
+  } = repo;
+
+  console.log(repo);
+
   return (
     <section className=" card border border-t-0 border-solid border-borderCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none">
       <div className="flex w-full justify-between my-2">
         <div>
           <img
             className="w-5 h-5 inline-block -mt-0.5"
-            src={repo}
+            src={repoIcon}
             alt="repo svg"
           />
-          <a href="/" className="text-2xl ml-4 text-linkCol">
-            tldraw / <span className="font-bold">tldraw</span>
+          <a href={url} className="text-2xl ml-4 md:ml-2 text-linkCol">
+            {username}/ <span className="font-bold">{repositoryName}</span>
           </a>
         </div>
-        <div className="p-1 px-4 border border-pryCol border-solid rounded-lg bg-navCol">
+        <button className="p-1 px-4 border border-pryCol border-solid rounded-lg bg-navCol hover:bg-borderCol hover:border-titleCol hover:text-titleCol">
           {" "}
           <img
             className="w-4 h-4 inline -mt-1"
             src={star}
             alt="repo svg"
           />{" "}
-          <span className="hidden md:inline"> Star</span>
-        </div>
+          <span className=" star hidden md:inline"> Star</span>
+        </button>
       </div>
-      <p className="max-w-2xl w-3/4 lg:w-11/12">
-        A tiny little drawing app dfsfhk fsajlfkcklfs cfjkl alksfjc lajlksj
-        dgklsj gfj klsfj lk jdaljf lcsjklfnkl jdxlkcgnv lcxzvlkzlxjfv lcanxzlnfv
-        lcznx¬ klj
-      </p>
+      <p className="max-w-2xl w-3/4 lg:w-11/12">{description}</p>
       <div className="flex justify-between flex-wrap text-xs mt-3">
         <div className="flex xs-w-auto mb-2 mr-3">
-          <p>Typescript</p>{" "}
+          <p
+            style={{
+              color: languageColor !== null ? languageColor : undefined,
+            }}
+          >
+            {language}
+          </p>{" "}
           <span className="ml-3">
             {" "}
             <img
@@ -43,7 +60,7 @@ const Repositories: React.FC = () => {
               src={star}
               alt="repo svg"
             />{" "}
-            1,717
+            {totalStars}
           </span>
           <span className="ml-3">
             {" "}
@@ -52,32 +69,22 @@ const Repositories: React.FC = () => {
               src={fork}
               alt="fork svg"
             />{" "}
-            49
+            {forks}
           </span>
         </div>
         <div className=" flex flex-wrap flex-grow xs:justify-between">
           <div className="mb-2 xs:mb-0">
             Built by{" "}
-            <img
-              className="w-6 h-6 object-cover inline -mt-1 mx-0.5 rounded-full"
-              src={image}
-              alt="contributor"
-            />{" "}
-            <img
-              className="w-6 h-6 inline -mt-1 mx-0.5 rounded-full"
-              src={image}
-              alt="contributor"
-            />{" "}
-            <img
-              className="w-6 h-6 inline -mt-1 mx-0.5 rounded-full"
-              src={image}
-              alt="contributor"
-            />{" "}
-            <img
-              className="w-6 h-6 inline -mt-1 mx-0.5 rounded-full"
-              src={image}
-              alt="contributor"
-            />{" "}
+            {builtBy.map(user => (
+              <a href={user.url} className="inline">
+                <img
+                  key={user.avatar}
+                  className="w-6 h-6 object-cover inline -mt-1 mx-0.5 rounded-full"
+                  src={user.avatar}
+                  alt="contributor"
+                />
+              </a>
+            ))}
           </div>
           <div className="ml-4 -mt-0.5">
             {" "}
@@ -86,7 +93,7 @@ const Repositories: React.FC = () => {
               src={star}
               alt="fork svg"
             />{" "}
-            641 stars today
+            {starsSince} stars today
           </div>
         </div>
       </div>
