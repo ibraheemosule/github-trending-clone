@@ -28,7 +28,7 @@ const Repositories: React.FC = () => {
           <span className="hidden md:inline"> Star</span>
         </div>
       </div>
-      <p className="max-w-2xl">
+      <p className="max-w-2xl w-3/4 lg:w-11/12">
         A tiny little drawing app dfsfhk fsajlfkcklfs cfjkl alksfjc lajlksj
         dgklsj gfj klsfj lk jdaljf lcsjklfnkl jdxlkcgnv lcxzvlkzlxjfv lcanxzlnfv
         lcznx¬ klj
@@ -59,7 +59,7 @@ const Repositories: React.FC = () => {
           <div className="mb-2 xs:mb-0">
             Built by{" "}
             <img
-              className="w-6 h-6 inline -mt-1 mx-0.5 rounded-full"
+              className="w-6 h-6 object-cover inline -mt-1 mx-0.5 rounded-full"
               src={image}
               alt="contributor"
             />{" "}

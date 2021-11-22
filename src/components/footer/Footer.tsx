@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="m-4 text-linkCol">
       <ul className="container border-borderCol border-t border-solid py-12 flex flex-wrap lg:flex-nowrap justify-between">
-        <li className="flex justify-center text-xs lg:justify-items-start w-full lg:w-auto mb-3 flex-wrap">
+        <div className="flex justify-center text-xs lg:justify-items-start w-full lg:w-auto mb-3 flex-wrap">
           <li className="md:mx-4 mx-1 text-pryCol lg:ml-0">
             &copy; {new Date().getFullYear()} GitHub, Inc
           </li>
@@ -24,11 +24,11 @@ const Footer: React.FC = () => {
           <li className="md:mx-6 mx-1 lg:ml-0 lg:mr-0">
             <a href="#">Docs</a>
           </li>
-        </li>
+        </div>
         <li className="lg:inline hidden mb-3">
           <img className="w-6 h-6" src={github} alt="github icon" />
         </li>
-        <li className="flex justify-center w-full text-xs lg:w-auto mb-3 flex-wrap">
+        <div className="flex justify-center w-full text-xs lg:w-auto mb-3 flex-wrap">
           <li className="md:mx-6 mx-1 lg:ml-0">Contact GitHub</li>
           <li className="md:mx-6 mx-1 lg:ml-0">
             <a href="#">Pricing</a>
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
           <li className="md:mx-6 mx-1 lg:ml-0 lg:mr-0">
             <a href="#">About</a>
           </li>
-        </li>
+        </div>
       </ul>
     </footer>
   );

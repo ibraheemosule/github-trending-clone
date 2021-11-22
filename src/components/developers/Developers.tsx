@@ -1,6 +1,7 @@
 import React from "react";
 import arrowDown from "../../assets/img/caret-down-outline.svg";
 import DevCard from "./DevCard";
+import { Link } from "react-router-dom";
 
 const Repositories: React.FC = () => {
   return (
@@ -8,10 +9,10 @@ const Repositories: React.FC = () => {
       <section className="border border-solid border-borderCol xs:bg-navCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none md:flex justify-between">
         <div className="btn-group border rounded-md border-solid border-borderCol overflow-hidden inline-block text-titleCol">
           <button className="capitalize m-0 py-1 px-2  h-full md:py-0.5">
-            repositories
+            <Link to="/repositories">repositories</Link>
           </button>
           <button className="capitalize m-0 py-1 px-2 bg-linkCol h-full md:0.5">
-            developers
+            <Link to="/developers">developers</Link>
           </button>
         </div>
         <div className="mt-4 md:mt-0 flex flex-wrap md:justify-between flex-col xs:flex-row text-sm">
