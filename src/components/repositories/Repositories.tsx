@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import repositories from "../../github-data/popularRepo";
 
 const Repositories: React.FC = () => {
-  console.log(repositories);
   return (
     <article className="container">
       <section className="border border-solid border-borderCol xs:bg-navCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none md:flex justify-between">

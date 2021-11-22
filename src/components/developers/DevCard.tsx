@@ -20,7 +20,7 @@ const Repositories: React.FC<IProp> = ({ dev }) => {
           </div>
         </div>
         <div className="flex text-sm flex-grow ml-4 justify-between md:justify-around md:ml-0 flex-wrap">
-          <div className="mb-2 w-1/3 ml-4">
+          <div className="mb-2 w-full xs:w-1/3 ml-4">
             <h2 className="text-xl md:text-2xl text-linkCol font-bold">
               <a href={url}>{name}</a>
             </h2>

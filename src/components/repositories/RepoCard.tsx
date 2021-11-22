@@ -1,4 +1,3 @@
-import React, { MouseEvent } from "react";
 import repoIcon from "../../assets/img/repo.svg";
 import star from "../../assets/img/star.svg";
 import fork from "../../assets/img/fork.svg";
@@ -18,8 +17,6 @@ const Repositories: React.FC<IProps> = ({ repo }) => {
     url,
   } = repo;
 
-  console.log(repo);
-
   return (
     <section className=" card border border-t-0 border-solid border-borderCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none">
       <div className="flex w-full justify-between my-2">
@@ -29,11 +26,11 @@ const Repositories: React.FC<IProps> = ({ repo }) => {
             src={repoIcon}
             alt="repo svg"
           />
-          <a href={url} className="text-2xl ml-4 md:ml-2 text-linkCol">
+          <a href={url} className="text-2xl ml-2  text-linkCol">
             {username}/ <span className="font-bold">{repositoryName}</span>
           </a>
         </div>
-        <button className="p-1 px-4 border border-pryCol border-solid rounded-lg bg-navCol hover:bg-borderCol hover:border-titleCol hover:text-titleCol">
+        <button className="p-1 px-4 border self-start border-pryCol border-solid rounded-lg bg-navCol hover:bg-borderCol hover:border-titleCol hover:text-titleCol">
           {" "}
           <img
             className="w-4 h-4 inline -mt-1"
@@ -76,9 +73,8 @@ const Repositories: React.FC<IProps> = ({ repo }) => {
           <div className="mb-2 xs:mb-0">
             Built by{" "}
             {builtBy.map(user => (
-              <a href={user.url} className="inline">
+              <a key={user.avatar} href={user.url} className="inline">
                 <img
-                  key={user.avatar}
                   className="w-6 h-6 object-cover inline -mt-1 mx-0.5 rounded-full"
                   src={user.avatar}
                   alt="contributor"
