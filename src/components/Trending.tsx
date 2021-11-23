@@ -21,7 +21,6 @@ const Trending: React.FC = () => {
           <Route path="/" element={<Repositories />} />
           <Route path="/repositories" element={<Repositories />} />
           <Route path="/developers" element={<Developers />} />
-          <Route path="/error404" element={<Error404 />} />
           <Route path="/*" element={<Error404 />} />
         </Routes>
       </main>
