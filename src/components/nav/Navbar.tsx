@@ -48,13 +48,7 @@ const Navbar: React.FC = () => {
               />
             </li>
             <li className="w-full md:ml-6 border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer md:hidden">
-              <a
-                href="https://github.com/dashboard"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Dashboard
-              </a>
+              <a href="https://github.com/dashboard">Dashboard</a>
             </li>
             <li className="w-full md:ml-6  md:w-auto border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer">
               <a href="https://github.com/pulls">
