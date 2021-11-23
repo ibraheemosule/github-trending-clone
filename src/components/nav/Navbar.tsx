@@ -48,34 +48,40 @@ const Navbar: React.FC = () => {
               />
             </li>
             <li className="w-full md:ml-6 border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer md:hidden">
-              <a href="github.com/dashboard">Dashboard</a>
+              <a
+                href="https://github.com/dashboard"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Dashboard
+              </a>
             </li>
             <li className="w-full md:ml-6  md:w-auto border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer">
-              <a href="github.com/pulls">
+              <a href="https://github.com/pulls">
                 <span className="hidden md:inline lg:hidden">Pulls</span>
                 <span className="md:hidden lg:inline">Pull requests</span>
               </a>
             </li>
             <li className="w-full md:ml-6   md:w-auto border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer">
-              <a href="github.com/issues">Issues</a>
+              <a href="https://github.com/issues">Issues</a>
             </li>
             <li className="w-full md:ml-6  md:w-auto border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer">
-              <a href="github.com/marketplace">Marketplace</a>
+              <a href="https://github.com/marketplace">Marketplace</a>
             </li>
             <li className="w-full md:ml-6  md:w-auto border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer">
-              <a href="github.com/explore">Explore</a>
+              <a href="https://github.com/explore">Explore</a>
             </li>
             <li className="w-full  md:hidden border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer">
-              <a href="github.com/features/codespaces">Codespaces</a>
+              <a href="https://github.com/features/codespaces">Codespaces</a>
             </li>
             <li className="w-full  md:hidden border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer">
-              <a href="github.com/sponsors/community">Sponsors</a>
+              <a href="https://github.com/sponsors/community">Sponsors</a>
             </li>
             <li className="w-full  md:hidden border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer ">
               <a href="github.com/settings">Settings</a>
             </li>
             <li className="w-full  md:hidden border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer">
-              <a href="github.com/ibraheemsulay">
+              <a href="https://github.com/ibraheemsulay">
                 {" "}
                 <img
                   className="w-6 h-6 object-cover inline -mt-0.5 rounded-full"
@@ -86,7 +92,7 @@ const Navbar: React.FC = () => {
               </a>
             </li>
             <li className="w-full  md:hidden border-borderCol py-2 text-titleCol hover:text-pryCol cursor-pointer">
-              <a href="github.com/signout">
+              <a href="https://github.com/signout">
                 {" "}
                 <img
                   className="w-4 h-4 inline -mt-0.5 rounded-full"
@@ -140,22 +146,22 @@ const Navbar: React.FC = () => {
         <div className="flex justify-center md:justify-start lg:justify-items-start w-full md:w-auto flex-wrap md:flex-nowrap">
           <li className="md:mx-4 md1:mx-5 md:ml-0 md1:ml-0 mx-1 mt-2 w-full md:w-auto text-center mb-2 md:mb-0 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol ">
             {" "}
-            <a href="github.com/explore">Explore</a>
+            <a href="https://github.com/explore">Explore</a>
           </li>
           <li className="md:mx-2 md1:mx-3 mx-2 mt-2 lg:ml-0 pb-2 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol">
-            <a href="github.com/topics">Topics</a>
+            <a href="https://github.com/topics">Topics</a>
           </li>
           <li className="md:mx-2 md1:mx-3 mx-1 mt-2 lg:ml-0 pb-2 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol">
-            <a href="github.com/trending">Trending</a>
+            <a href="https://github.com/trending">Trending</a>
           </li>
           <li className="md:mx-4 md1:mx-3 mx-2 mt-2  lg:ml-0 pb-2 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol">
-            <a href="github.com/collections">Collections</a>
+            <a href="https://github.com/collections">Collections</a>
           </li>
           <li className="md:mx-4 md1:mx-3 mx-2 mt-2 lg:ml-0 pb-2 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol">
-            <a href="github.com/events">Events</a>
+            <a href="https://github.com/events">Events</a>
           </li>
           <li className="md:mx-4 md1:mx-3 mt-2 mx-2 h-100 block lg:ml-0 cursor-pointer lg:mr-0 pb-2 border-b-2 border-bgCol hover:text-titleCol hover:border-solid hover:border-linkCol">
-            <a href="github.com/sponsors/community">GitHub Sponsors</a>
+            <a href="https://github.com/sponsors/community">GitHub Sponsors</a>
           </li>
         </div>
         <button className="capitalize hidden  md:inline py-2 px-3 mb-2 hover:bg-borderCol hover:border-titleCol border border-solid rounded-md border-borderCol bg-navCol hover:text-titleCol">

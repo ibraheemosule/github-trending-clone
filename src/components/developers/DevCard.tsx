@@ -33,7 +33,12 @@ const Repositories: React.FC<IProp> = ({ dev }) => {
                 src={fire}
                 alt="repo svg"
               />
-              <a href="/" className="uppercase font-light ml-1">
+              <a
+                href={popularRepository.url ? popularRepository.url : undefined}
+                target="_blank"
+                rel="noreferrer"
+                className="uppercase font-light ml-1"
+              >
                 popular repo
               </a>
             </div>
