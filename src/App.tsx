@@ -1,17 +1,18 @@
 import Trending from "./components/Trending";
-import { useEffect, useState } from "react";
-import { IResponse } from "./ts-types/types";
 import Navbar from "./components/nav/Navbar";
+import { Provider } from "react-redux";
+import store from "./store/index.js";
 
 const App: React.FC = () => {
-  const [repositories] = useState<IResponse[]>([]);
-
   return (
-    <div className="App">
-      <Navbar />
-      {/*ROUTES ARE RENDERED INSIDE TRENDING COMPONENT*/}
-      <Trending />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Navbar />
+
+        {/*ROUTES ARE RENDERED INSIDE TRENDING COMPONENT*/}
+        <Trending />
+      </div>
+    </Provider>
   );
 };
 

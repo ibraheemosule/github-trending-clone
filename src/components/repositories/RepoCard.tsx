@@ -1,17 +1,17 @@
 import repoIcon from "../../assets/img/repo.svg";
 import star from "../../assets/img/star.svg";
 import fork from "../../assets/img/fork.svg";
-import { IProps } from "../../ts-types/types";
+import { IPropRepositories, UserInfo } from "../../ts-types/types";
 
-const Repositories: React.FC<IProps> = ({ repo }) => {
+const Repositories: React.FC<IPropRepositories> = ({ repo }) => {
   const {
-    username,
-    repositoryName,
+    author,
+    name,
     description,
     language,
-    totalStars,
+    stars,
     forks,
-    starsSince,
+    currentPeriodStars,
     builtBy,
     languageColor,
     url,
@@ -27,10 +27,10 @@ const Repositories: React.FC<IProps> = ({ repo }) => {
             alt="repo svg"
           />
           <a href={url} className="text-2xl ml-2  text-linkCol">
-            {username}/ <span className="font-bold">{repositoryName}</span>
+            {author}/ <span className="font-bold">{name}</span>
           </a>
         </div>
-        <button className="p-1 px-4 border self-start border-pryCol border-solid rounded-lg bg-navCol hover:bg-borderCol hover:border-titleCol hover:text-titleCol">
+        <button className="p-1 px-4 border self-start border-pryCol border-solid rounded-lg bg-navCol hover:bg-borderCol hover:border-titleCol hover:text-titleCol flex-shrink-0">
           {" "}
           <img
             className="w-4 h-4 inline -mt-1"
@@ -57,7 +57,7 @@ const Repositories: React.FC<IProps> = ({ repo }) => {
               src={star}
               alt="repo svg"
             />{" "}
-            {totalStars}
+            {stars}
           </span>
           <span className="ml-3">
             {" "}
@@ -72,8 +72,8 @@ const Repositories: React.FC<IProps> = ({ repo }) => {
         <div className=" flex flex-wrap flex-grow xs:justify-between">
           <div className="mb-2 xs:mb-0">
             Built by{" "}
-            {builtBy.map(user => (
-              <a key={user.avatar} href={user.url} className="inline">
+            {builtBy.map((user: UserInfo) => (
+              <a key={user.href} href={user.href} className="inline">
                 <img
                   className="w-6 h-6 object-cover inline -mt-1 mx-0.5 rounded-full"
                   src={user.avatar}
@@ -89,7 +89,7 @@ const Repositories: React.FC<IProps> = ({ repo }) => {
               src={star}
               alt="fork svg"
             />{" "}
-            {starsSince} stars today
+            {currentPeriodStars} stars today
           </div>
         </div>
       </div>

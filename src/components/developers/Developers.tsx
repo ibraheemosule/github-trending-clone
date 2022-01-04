@@ -1,10 +1,17 @@
 import React from "react";
 import arrowDown from "../../assets/img/caret-down-outline.svg";
 import DevCard from "./DevCard";
-import { Link } from "react-router-dom";
-import developers from "../../github-data/popularDevs";
+import { Link, Navigate } from "react-router-dom";
+import { IState, TDevelopers } from "../../ts-types/types";
+import { useSelector } from "react-redux";
+import Loader from "../Loader";
 
 const Developers: React.FC = () => {
+  const error = useSelector((state: IState) => state.error);
+  const devs = useSelector((state: IState) => state.developers);
+
+  if (error) return <Navigate to="/error" />;
+
   return (
     <article className="container">
       <section className="border border-solid border-borderCol xs:bg-navCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none md:flex justify-between">
@@ -41,9 +48,11 @@ const Developers: React.FC = () => {
           </p>
         </div>
       </section>
-      {developers.map(dev => (
-        <DevCard key={dev.rank} dev={dev} />
-      ))}
+      {devs.length
+        ? devs.map((dev: TDevelopers, i: number) => (
+            <DevCard key={dev.username} dev={dev} index={i} />
+          ))
+        : [...new Array(5)].map((val, i) => <Loader key={i} />)}
     </article>
   );
 };

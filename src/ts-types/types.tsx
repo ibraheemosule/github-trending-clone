@@ -1,45 +1,54 @@
-export type userInfo = {
+export interface IState {
+  loading: false;
+  repositories: [];
+  developers: [];
+  error: "";
+}
+export interface UserInfo {
   username: string;
-  url: string;
+  href: string;
   avatar: string;
-};
+}
 
-export type popularRepo = {
-  repositoryName: string | null;
-  description: null | string;
-  url: string | null;
-};
+export interface Repo {
+  name: string | null;
+  description: string | null;
+  url: string;
+}
 
-export type TRepositories = {
-  rank: number;
-  username: string;
-  repositoryName: string;
+export interface TRepositories {
+  author: string;
+  name: string;
+  avatar: string;
   url: string;
   description: string | null;
   language: string | null;
+  stars: number;
   languageColor: string | null;
-  totalStars: number;
   forks: number;
-  starsSince: number;
-  since: string;
-  builtBy: userInfo[];
-};
+  currentPeriodStars: number;
+  builtBy: UserInfo[];
+}
 
-export type TDevelopers = {
-  rank: number;
+export interface TDevelopers {
   username: string;
   name: string;
   url: string;
+  sponsorUrl: string | null;
   avatar: string;
-  since: string;
-  popularRepository: popularRepo;
-};
-
-export type IResponse = TRepositories[];
-export interface IProps {
+  repo: Repo;
+}
+export interface IPropRepositories {
   repo: TRepositories;
 }
-
-export interface IProp {
+export interface IPropDevelopers {
   dev: TDevelopers;
+  index: number;
 }
+export interface TDeveloperRepo {
+  name: string;
+  description: string | null;
+  url: string;
+}
+
+export type TDevelopersData = TDevelopers | undefined;

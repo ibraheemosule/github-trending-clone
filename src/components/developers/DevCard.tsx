@@ -1,16 +1,17 @@
 import React from "react";
-import repo from "../../assets/img/repo.svg";
+import repoSVG from "../../assets/img/repo.svg";
 import fire from "../../assets/img/fire.svg";
 import heart from "../../assets/img/heart.svg";
-import { IProp } from "../../ts-types/types";
+import { IPropDevelopers } from "../../ts-types/types";
 
-const Repositories: React.FC<IProp> = ({ dev }) => {
-  const { rank, username, name, url, avatar, popularRepository } = dev;
+const Repositories: React.FC<IPropDevelopers> = ({ dev, index }) => {
+  const { username, name, url, avatar, repo, sponsorUrl } = dev;
+
   return (
     <section className="card border border-t-0 border-solid border-borderCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none">
       <div className="flex w-full justify-between md:justify-start my-2">
         <div className="flex">
-          <span>{rank} </span>
+          <span>{index + 1} </span>
           <div className="md:w-14 ml-4 md:pt-14 md:h-14 w-10 h-10 pt-10 relative rounded-full overflow-hidden">
             <img
               src={avatar}
@@ -34,7 +35,7 @@ const Repositories: React.FC<IProp> = ({ dev }) => {
                 alt="repo svg"
               />
               <a
-                href={popularRepository.url ? popularRepository.url : undefined}
+                href={repo && repo.url}
                 target="_blank"
                 rel="noreferrer"
                 className="uppercase font-light ml-1"
@@ -45,36 +46,33 @@ const Repositories: React.FC<IProp> = ({ dev }) => {
             <div className="mt-1">
               <img
                 className="w-4 h-4 inline-block -mt-0.5"
-                src={repo}
+                src={repoSVG}
                 alt="repo svg"
               />
-              <a
-                href={
-                  popularRepository.url !== null
-                    ? popularRepository.url
-                    : undefined
-                }
-                className=" ml-1 md:ml-2 text-linkCol font-bold"
-              >
-                {popularRepository.repositoryName}
+              <a href={url} className=" ml-1 md:ml-2 text-linkCol font-bold">
+                {name}
               </a>
             </div>
             <p className="mt-1 w-full xs:w-3/4 md:w-full mb-2">
-              {popularRepository.description}
+              {repo?.description}
             </p>
           </div>
           <div className=" info md:w-1/3 text-left ml-4 xs:ml-0 w-full xs:w-auto xs:text-right order-3 md:order-3 xs:order-2 text-sm">
-            {Math.ceil(Math.random() * 10) % 2 === 1 ? (
-              <button className="capitalize py-1 px-2 mr-2 border border-solid inline rounded-md border-borderCol bg-navCol hover:text-titleCol hover:bg-pryCol transition-colors">
-                <img src={heart} className="inline mr-2" alt="star" />
-                sponsor
-              </button>
+            {sponsorUrl ? (
+              <a href={sponsorUrl}>
+                <button className="capitalize py-1 px-2 mr-2 border border-solid inline rounded-md border-borderCol bg-navCol hover:text-titleCol hover:bg-pryCol transition-colors">
+                  <img src={heart} className="inline mr-2" alt="star" />
+                  sponsor
+                </button>
+              </a>
             ) : (
               " "
             )}
-            <button className="capitalize inline py-1 px-2 border border-solid rounded-md border-borderCol bg-navCol hover:text-titleCol hover:bg-pryCol">
-              follow
-            </button>
+            <a href={url}>
+              <button className="capitalize inline py-1 px-2 border border-solid rounded-md border-borderCol bg-navCol hover:text-titleCol hover:bg-pryCol">
+                follow
+              </button>
+            </a>
           </div>
         </div>
       </div>

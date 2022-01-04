@@ -1,10 +1,16 @@
 import React from "react";
 import arrowDown from "../../assets/img/caret-down-outline.svg";
 import RepoCard from "./RepoCard";
-import { Link } from "react-router-dom";
-import repositories from "../../github-data/popularRepo";
+import { Link, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { IState } from "../../ts-types/types";
+import Loader from "../Loader";
 
 const Repositories: React.FC = () => {
+  const error = useSelector((state: IState) => state.error);
+  const repos = useSelector((state: IState) => state.repositories);
+
+  if (error) return <Navigate to="/error" />;
   return (
     <article className="container">
       <section className="border border-solid border-borderCol xs:bg-navCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none md:flex justify-between">
@@ -53,9 +59,9 @@ const Repositories: React.FC = () => {
         </div>
       </section>
 
-      {repositories.map(repo => (
-        <RepoCard key={repo.rank} repo={repo} />
-      ))}
+      {repos.length
+        ? repos.map((repo: any) => <RepoCard key={repo.url} repo={repo} />)
+        : [...new Array(5)].map(val => <Loader key={val} />)}
     </article>
   );
 };
