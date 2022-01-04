@@ -23,6 +23,7 @@ export const errorMessage = (error: any) => ({
 export const fetchData = (dataName: string, url: string) => {
   return async (dispatch: any) => {
     dispatch(fetchingData());
+    dispatch(errorMessage(""));
     try {
       const res = await axios.get(url);
       if (dataName === "repos") dispatch(fetchRepos(res.data));

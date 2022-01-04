@@ -6,10 +6,8 @@ import Error404 from "./Error404/Error404";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchData } from "../store/actions";
-import { Routes, Route } from "react-router-dom";
-
-const repositories = "https://gtrend.yapie.me/repositories?language=&since=",
-  developers = "https://gtrend.yapie.me/developers?language=&since=";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { repositories, developers } from "../assets/urls";
 
 const Trending: React.FC = () => {
   const dispatch = useDispatch();
@@ -30,7 +28,8 @@ const Trending: React.FC = () => {
       <main className="py-10 px-4 border-navCol border-t">
         {/*ROUTES ARE RENDERED HERE*/}
         <Routes>
-          <Route path="/" element={<Repositories />} />
+          <Route path="/" element={<Navigate to="/repositories" />}></Route>
+          <Route />
           <Route path="/repositories" element={<Repositories />} />
           <Route path="/developers" element={<Developers />} />
           <Route path="/*" element={<Error404 />} />

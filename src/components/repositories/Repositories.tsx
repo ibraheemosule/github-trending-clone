@@ -61,7 +61,7 @@ const Repositories: React.FC = () => {
 
       {repos.length
         ? repos.map((repo: any) => <RepoCard key={repo.url} repo={repo} />)
-        : [...new Array(5)].map(val => <Loader key={val} />)}
+        : [...new Array(5)].map((val, i) => <Loader key={i} />)}
     </article>
   );
 };
