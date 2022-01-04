@@ -1,7 +1,7 @@
 import Trending from "./components/Trending";
 import Navbar from "./components/nav/Navbar";
 import { Provider } from "react-redux";
-import store from "./store/index.js";
+import store from "./store";
 
 const App: React.FC = () => {
   return (
