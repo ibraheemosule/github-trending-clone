@@ -1,7 +1,9 @@
 import repoIcon from "../../assets/img/repo.svg";
 import star from "../../assets/img/star.svg";
 import fork from "../../assets/img/fork.svg";
+import iconDropdown from "../../assets/img/caret-down-outline.svg";
 import { IPropRepositories, UserInfo } from "../../ts-types/types";
+import "../../assets/styles/overrideStyle.css";
 
 const Repositories: React.FC<IPropRepositories> = ({ repo }) => {
   const {
@@ -30,15 +32,24 @@ const Repositories: React.FC<IPropRepositories> = ({ repo }) => {
             {author}/ <span className="font-bold">{name}</span>
           </a>
         </div>
-        <button className="p-1 px-4 border self-start border-pryCol border-solid rounded-lg bg-navCol hover:bg-borderCol hover:border-titleCol hover:text-titleCol flex-shrink-0">
-          {" "}
-          <img
-            className="w-4 h-4 inline -mt-1"
-            src={star}
-            alt="repo svg"
-          />{" "}
-          <span className=" star hidden md:inline"> Star</span>
-        </button>
+        <div className=" flex self-start flex-shrink-0 text-sm">
+          <a href="https://github.com/trending">
+            <button className="p-1 px-3 border border-borderCol border-solid rounded-lg bg-navCol rounded-r-none hover:bg-borderCol hover:border-titleCol hover:text-titleCol">
+              {" "}
+              <img
+                className="w-4 h-4 inline -mt-1"
+                src={star}
+                alt="repo svg"
+              />{" "}
+              <span className=" star hidden md:inline"> Star</span>
+            </button>
+          </a>
+          <a className="self-stretch" href="https://github.com/trending">
+            <button className="starButton p-1 px-3 h-full border border-solid border-borderCol border-l-0 rounded-l-none rounded-lg bg-navCol hover:bg-borderCol hover:border-titleCol hover:text-titleCol">
+              <img className="w-3 h-3" src={iconDropdown} alt="dropdown" />
+            </button>
+          </a>
+        </div>
       </div>
       <p className="max-w-2xl w-3/4 lg:w-11/12">{description}</p>
       <div className="flex justify-between flex-wrap text-xs mt-3">
@@ -85,7 +96,7 @@ const Repositories: React.FC<IPropRepositories> = ({ repo }) => {
           <div className="ml-4 -mt-0.5">
             {" "}
             <img
-              className="w-6 h-6 inline -mt-1 mx-0.5 xs-ml-auto"
+              className="w-4 h-4 inline -mt-1 mx-0.5 xs-ml-auto"
               src={star}
               alt="fork svg"
             />{" "}
