@@ -1,7 +1,6 @@
 import React from "react";
-import Repositories from "./repositories/Repositories";
 import Footer from "./footer/Footer";
-import Developers from "./developers/Developers";
+import CardWrapper from "./CardWrapper";
 import Error404 from "./Error404/Error404";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -30,8 +29,8 @@ const Trending: React.FC = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/repositories" />}></Route>
           <Route />
-          <Route path="/repositories" element={<Repositories />} />
-          <Route path="/developers" element={<Developers />} />
+          <Route path="/repositories" element={<CardWrapper />} />
+          <Route path="/developers" element={<CardWrapper />} />
           <Route path="/*" element={<Error404 />} />
         </Routes>
       </main>
