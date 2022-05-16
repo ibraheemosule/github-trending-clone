@@ -8,12 +8,16 @@ const Repositories: React.FC<IPropDevelopers> = ({ dev, index }) => {
   const { username, name, url, avatar, repo, sponsorUrl } = dev;
 
   return (
-    <section className="card border border-t-0 border-solid border-borderCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none">
+    <section
+      data-testid="dev-card"
+      className="card border border-t-0 border-solid border-borderCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none"
+    >
       <div className="flex w-full justify-between md:justify-start my-2">
         <div className="flex">
           <span className="text-sm">{index + 1} </span>
           <div className="md:w-14 ml-4 md:pt-14 md:h-14 w-10 h-10 pt-10 relative rounded-full overflow-hidden">
             <img
+              data-testid="avatar"
               src={avatar}
               className="absolute object-cover h-full w-full top-0 left-0"
               alt="avatar"

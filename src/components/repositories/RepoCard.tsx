@@ -5,8 +5,8 @@ import iconDropdown from "../../assets/img/caret-down-outline.svg";
 import { IPropRepositories, UserInfo } from "../../ts-types/types";
 import "../../assets/styles/overrideStyle.css";
 
-const Repositories: React.FC<IPropRepositories> = ({ repo }) => {
-  const {
+const Repositories: React.FC<IPropRepositories> = ({
+  repo: {
     author,
     name,
     description,
@@ -17,10 +17,13 @@ const Repositories: React.FC<IPropRepositories> = ({ repo }) => {
     builtBy,
     languageColor,
     url,
-  } = repo;
-
+  },
+}) => {
   return (
-    <section className=" card border border-t-0 border-solid border-borderCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none">
+    <section
+      data-testid="repo-card"
+      className=" card border border-t-0 border-solid border-borderCol rounded-md p-4 -mx-1 -mt-1 text-pryCol rounded-b-none"
+    >
       <div className="flex w-full justify-between my-2">
         <div>
           <img
@@ -84,7 +87,12 @@ const Repositories: React.FC<IPropRepositories> = ({ repo }) => {
           <div className="mb-2 xs:mb-0">
             Built by{" "}
             {builtBy.map((user: UserInfo) => (
-              <a key={user.href} href={user.href} className="inline">
+              <a
+                data-testid="user-link"
+                key={user.href}
+                href={user.href}
+                className="inline"
+              >
                 <img
                   className="w-6 h-6 object-cover inline -mt-1 mx-0.5 rounded-full"
                   src={user.avatar}
